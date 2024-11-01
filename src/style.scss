@@ -1,0 +1,121 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.soivigol-post-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding-top: 3rem;
+	.item{
+		display: block;
+		width: 100%;
+		position: relative;
+		margin-bottom: 30px;
+		text-decoration: none;
+	}
+	&.col-2 {
+		.item {
+			width: calc( 50% - 15px );
+		}
+		@media screen and (max-width:768px) {
+			.item {
+				width: 100%;
+			}
+		}
+	}
+	&.col-3 {
+		.item {
+			width: calc( 33% - 15px );
+		}
+		@media screen and (max-width:768px) {
+			.item {
+				width: 100%;
+			}
+		}
+		&::after {
+			content: "";
+			flex: auto;
+			max-width: calc(33% - 15px);
+			width: 100%;
+		}
+	}
+	&.col-4 {
+		.item {
+			width: calc( 25% - 10px );
+		}
+		@media screen and (max-width:768px) {
+			.item {
+				width: calc( 50% - 15px );
+			}
+		}
+	}
+
+	.cont-image {
+		position: relative;
+		padding-top: 100%;
+		overflow: hidden;
+		img {
+			position: absolute;
+			min-height: 100%;
+			min-width: 100%;
+			top: 0;
+			object-fit: cover;
+			overflow: hidden;
+		}
+		&.aspect-3x2 {
+			padding-top: 66.66%;
+		}
+		&.aspect-2x3 {
+			padding-top: 150%;
+		}
+		&.aspect-4x3 {
+			padding-top: 75%;
+		}
+		&.aspect-3x4 {
+			padding-top: 133.33%;
+		}
+		&.aspect-16x9 {
+			padding-top: 56.25%;
+		}
+		&.aspect-9x16 {
+			padding-top: 177.77%;
+		}
+	}
+
+	.content {
+		padding: 20px;
+	}
+
+	.item-title {
+		padding: 0;
+		font-size: 1.3rem;
+		margin-top: 0;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	p {
+		padding: 0;
+		font-size: 1rem;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	&.item-shadow .item {
+		box-shadow: 0 0 4px 4px lightgray;
+	}
+	&.item-shadow-hover .item {
+		&:hover {
+			box-shadow: 0 0 6px 8px lightgray;
+		}
+	}
+}
+
+.wp-block-post-list-soivigol-post-list p {
+	margin: 0;
+}
